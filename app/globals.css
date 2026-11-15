@@ -8,13 +8,18 @@
   --brand-primary-hover: #2947df;
   --brand-primary-light: #e2e8ff;
   --brand-secondary: #ffe76e;
+  --brand-secondary-light: #fff4cc;
 
   --text-primary: #171b2c;
   --text-secondary: #656770;
 
   --border: #dbdfeb;
+
   --white: #ffffff;
   --black: #000000;
+  --orange: #ffcb9f;
+  --coral: #ff6b4a;
+  --star: #f4c842;
 }
 
 * {
@@ -23,6 +28,9 @@
 
 body {
   cursor: default;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
   padding: 0;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -38,6 +46,7 @@ body {
   --color-brand-primary-light: var(--brand-primary-light);
 
   --color-brand-secondary: var(--brand-secondary);
+  --color-brand-secondary-light: var(--brand-secondary-light);
 
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
@@ -46,7 +55,9 @@ body {
 
   --color-white: var(--white);
   --color-black: var(--black);
-
+  --color-orange: var(--orange);
+  --color-coral: var(--coral);
+  --color-star: var(--star);
   --font-heading: var(--font-jakarta);
   --font-sans: var(--font-inter);
 }
@@ -58,4 +69,16 @@ a {
 
 button {
   -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
