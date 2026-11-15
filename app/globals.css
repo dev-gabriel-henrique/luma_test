@@ -5,7 +5,6 @@
   --foreground: #171b2c;
 
   --brand-primary: #3157f6;
-  --brand-primary-hover: #2947df;
   --brand-primary-light: #e2e8ff;
   --brand-secondary: #ffe76e;
   --brand-secondary-light: #fff4cc;
@@ -42,7 +41,6 @@ body {
   --color-foreground: var(--foreground);
 
   --color-brand-primary: var(--brand-primary);
-  --color-brand-primary-hover: var(--brand-primary-hover);
   --color-brand-primary-light: var(--brand-primary-light);
 
   --color-brand-secondary: var(--brand-secondary);

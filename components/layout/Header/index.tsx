@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, LinkButton } from "@/components/ui/Button";
+import Container from "@/components/ui/Container";
 import { ComboDTO } from "@/utils/types";
 import { Menu } from "lucide-react";
 import Link from "next/link";
@@ -9,7 +10,7 @@ import Sidebar from "../Sidebar";
 
 const navigation: ComboDTO[] = [
   { label: "Courses", value: "#courses" },
-  { label: "For teams", value: "#teams" },
+  { label: "For teams", value: "#contact" },
   { label: "Community", value: "#community" },
   { label: "About", value: "#about" },
 ];
@@ -23,11 +24,11 @@ export default function Header() {
 
   return (
     <header className="relative z-50 border-b border-border bg-background">
-      <div className="mx-auto flex h-17 max-w-7xl items-center justify-between px-5 md:px-20">
+      <Container className="flex h-17 items-center justify-between">
         <Link
           href="#home"
           aria-label="Luma - Home Page"
-          className="text-primary font-bold"
+          className="font-heading text-lg font-bold text-text-primary"
         >
           luma.
         </Link>
@@ -47,7 +48,7 @@ export default function Header() {
         <div className="hidden items-center gap-6 md:flex">
           <Link
             href="#login"
-            className="text-sm font-medium transition-colors  text-text-secondary hover:text-text-primary"
+            className="text-sm font-medium transition-colors text-text-secondary hover:text-text-primary"
           >
             Log in
           </Link>
@@ -60,15 +61,15 @@ export default function Header() {
         <Button
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
+          aria-controls="mobile-navigation"
           size="sm"
           variant="link"
-          className="p-0 md:hidden"
+          className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <Menu width={18} strokeWidth={1.8} />
         </Button>
-      </div>
+      </Container>
 
       <Sidebar
         isOpen={isMenuOpen}

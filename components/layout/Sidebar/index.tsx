@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { ComboDTO } from "@/utils/types";
-import { Link, X } from "lucide-react";
+import { X } from "lucide-react";
+import Link from "next/link";
 import { useEffect } from "react";
 
 interface ISidebarProps {
@@ -39,7 +40,7 @@ export default function Sidebar({
     <>
       <button
         type="button"
-        aria-label="Fechar menu"
+        aria-label="Close menu"
         onClick={onClose}
         aria-hidden={!isOpen}
         tabIndex={isOpen ? 0 : -1}
@@ -67,15 +68,14 @@ export default function Sidebar({
             variant="link"
             aria-label="Close menu"
             onClick={onClose}
-            className="ml-auto p-0"
+            className="ml-auto"
           >
             <X size={24} strokeWidth={1.8} />
           </Button>
         </div>
 
-        {/* Navigation */}
         <nav className="flex flex-1 flex-col gap-2 px-6 py-8">
-          <span className="mb-3 text-xs font-semibold tracking-widest text-muted uppercase">
+          <span className="mb-3 text-xs font-semibold tracking-widest text-text-secondary uppercase">
             Navigation
           </span>
 
@@ -84,7 +84,7 @@ export default function Sidebar({
               key={item.value}
               href={item.value}
               onClick={onClose}
-              className="rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-primary-light hover:text-primary"
+              className="rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-brand-primary-light hover:text-brand-primary"
             >
               {item.label}
             </Link>
@@ -95,18 +95,17 @@ export default function Sidebar({
           <Link
             href="#login"
             onClick={onClose}
-            className="rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-primary-light"
+            className="rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-brand-primary-light"
           >
             Log in
           </Link>
         </nav>
 
-        {/* Footer */}
         <div className="border-t border-border p-6">
           <Link
             href="#courses"
             onClick={onClose}
-            className="flex w-full items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-hover"
+            className="flex w-full items-center justify-center rounded-md bg-brand-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-primary"
           >
             Start learning
           </Link>
