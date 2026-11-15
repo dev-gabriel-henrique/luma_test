@@ -1,0 +1,48 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+export interface CategoryDTO {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface ICategoryCardProps {
+  category: CategoryDTO;
+  position: number;
+}
+
+export default function CategoryCard({
+  category,
+  position,
+}: ICategoryCardProps) {
+  const order = String(position).padStart(2, "0");
+
+  return (
+    <article className="flex h-full flex-col rounded-xl border border-border bg-white p-6 transition-shadow hover:shadow-md">
+      <span className="w-fit rounded bg-brand-primary-light px-2 py-1 text-[10px] font-bold text-brand-primary">
+        {order}
+      </span>
+
+      <h3 className="mt-5 text-base font-bold text-text-primary">
+        {category.title}
+      </h3>
+
+      <p className="mt-3 flex-1 text-xs leading-5 text-text-secondary">
+        {category.description}
+      </p>
+
+      <Link
+        href={category.href}
+        aria-label={`Explore ${category.title} courses`}
+        className="group mt-6 inline-flex w-fit items-center gap-2 text-xs font-semibold text-text-primary hover:text-brand-primary"
+      >
+        Explore
+        <ArrowRight
+          size={14}
+          className="transition-transform group-hover:translate-x-1"
+        />
+      </Link>
+    </article>
+  );
+}
