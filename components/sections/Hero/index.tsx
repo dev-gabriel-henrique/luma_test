@@ -64,7 +64,7 @@ export default function Hero() {
           </div>
 
           <div className="mt-6 flex items-center justify-center gap-3 sm:justify-start">
-            <AvatarGroup avatars={LEARNER_AVATARS} />
+            <AvatarGroup avatars={LEARNER_AVATARS.filter((_, i) => i < 3)} />
             <p className="text-[11px] text-text-secondary">
               <span className="font-bold text-text-primary">
                 Trusted by 24,000+

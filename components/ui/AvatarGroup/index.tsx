@@ -8,16 +8,21 @@ export interface AvatarDTO {
 
 interface IAvatarGroupProps {
   avatars: AvatarDTO[];
+  borderClassName?: string;
   className?: string;
 }
 
-export default function AvatarGroup({ avatars, className }: IAvatarGroupProps) {
+export default function AvatarGroup({
+  avatars,
+  borderClassName = "border-background",
+  className,
+}: IAvatarGroupProps) {
   return (
     <ul className={twMerge("flex -space-x-2", className)}>
       {avatars.map((avatar) => (
         <li
           key={avatar.src}
-          className="relative size-8 overflow-hidden rounded-full border-2 border-background"
+          className={`relative size-8 overflow-hidden rounded-full border-2 ${borderClassName}`}
         >
           <Image
             src={avatar.src}
