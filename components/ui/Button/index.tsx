@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 type ButtonSize = "sm" | "md" | "lg";
-type ButtonVariant = "primary" | "secondary" | "link" | "outline";
+type ButtonVariant = "primary" | "secondary" | "link" | "outline" | "neutral";
 
 interface BaseProps {
   children: ReactNode;
@@ -23,14 +23,17 @@ const sizes: Record<ButtonSize, string> = {
 };
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-brand-primary text-white hover:bg-brand-primary-hover",
+  primary: "bg-brand-primary text-white hover:brightness-95",
 
   secondary: "bg-brand-secondary text-text-primary hover:brightness-95",
 
   outline:
-    "border border-brand-primary bg-transparent text-brand-primary hover:bg-primary-light",
+    "border border-brand-primary bg-transparent text-brand-primary hover:bg-brand-primary-light",
 
-  link: "bg-transparent text-text-primary  hover:underline",
+  neutral:
+    "border border-border bg-white text-text-primary hover:border-brand-primary",
+
+  link: "bg-transparent text-text-primary hover:underline",
 };
 
 function getButtonClasses(
