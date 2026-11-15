@@ -17,9 +17,9 @@ type ButtonProps = BaseProps & ButtonHTMLAttributes<HTMLButtonElement>;
 type LinkButtonProps = BaseProps & Omit<LinkProps, "children" | "className">;
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "px-5 py-2.5 text-xs",
-  md: "px-5 py-3 text-sm",
-  lg: "px-6 py-4 text-base",
+  sm: "h-11 px-5 text-[15px]",
+  md: "h-13 px-7 text-[15px]",
+  lg: "h-14 px-8 text-base",
 };
 
 const variants: Record<ButtonVariant, string> = {
@@ -42,7 +42,7 @@ function getButtonClasses(
   className = "",
 ) {
   return twMerge(
-    "rounded-md font-semibold transition-colors items-center justify-center inline-flex cursor-pointer disabled:cursor-not-allowed disabled:opacity-50",
+    "rounded-lg font-semibold transition-colors items-center justify-center inline-flex cursor-pointer disabled:cursor-not-allowed disabled:opacity-50",
     sizes[size],
     variants[variant],
     className,

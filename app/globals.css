@@ -7,7 +7,8 @@
   --brand-primary: #3157f6;
   --brand-primary-light: #e2e8ff;
   --brand-secondary: #ffe76e;
-  --brand-secondary-light: #fff4cc;
+  --brand-secondary-light: #fff1c2;
+  --brand-secondary-strong: #e8cf4a;
 
   --text-primary: #171b2c;
   --text-secondary: #656770;
@@ -45,6 +46,7 @@ body {
 
   --color-brand-secondary: var(--brand-secondary);
   --color-brand-secondary-light: var(--brand-secondary-light);
+  --color-brand-secondary-strong: var(--brand-secondary-strong);
 
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
@@ -77,6 +79,27 @@ h5 {
   font-family: var(--font-jakarta), sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+input,
+textarea {
+  cursor: text;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 3px;
 }

@@ -28,7 +28,7 @@ export default function Header() {
         <Link
           href="#home"
           aria-label="Luma - Home Page"
-          className="font-heading text-lg font-bold text-text-primary"
+          className="font-heading text-2xl font-bold tracking-tight text-text-primary"
         >
           luma.
         </Link>
@@ -38,7 +38,7 @@ export default function Header() {
             <Link
               href={item.value}
               key={item.value}
-              className="text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
+              className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
             >
               {item.label}
             </Link>
@@ -48,7 +48,7 @@ export default function Header() {
         <div className="hidden items-center gap-6 md:flex">
           <Link
             href="#login"
-            className="text-sm font-medium transition-colors text-text-secondary hover:text-text-primary"
+            className="text-[15px] text-text-secondary transition-colors hover:text-text-primary"
           >
             Log in
           </Link>

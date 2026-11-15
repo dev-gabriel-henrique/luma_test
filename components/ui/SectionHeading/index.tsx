@@ -28,9 +28,9 @@ const tones: Record<
     description: "text-text-secondary",
   },
   inverted: {
-    eyebrow: "text-white/80",
+    eyebrow: "text-white/85",
     title: "text-white",
-    description: "text-white/85",
+    description: "text-white/90",
   },
 };
 
@@ -49,7 +49,7 @@ export default function SectionHeading({
     <div className={twMerge("max-w-xl", alignments[align], className)}>
       {eyebrow && (
         <p
-          className={`text-[10px] font-bold uppercase tracking-[0.18em] ${colors.eyebrow}`}
+          className={`text-xs font-semibold uppercase tracking-[0.16em] md:text-[13px] ${colors.eyebrow}`}
         >
           {eyebrow}
         </p>
@@ -57,13 +57,15 @@ export default function SectionHeading({
 
       <h2
         id={id}
-        className={`mt-3 text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl ${colors.title}`}
+        className={`mt-3 text-[32px] font-bold leading-[1.1] tracking-[-0.03em] md:mt-4 md:text-5xl md:leading-[1.15] ${colors.title}`}
       >
         {title}
       </h2>
 
       {description && (
-        <p className={`mt-4 text-sm leading-6 ${colors.description}`}>
+        <p
+          className={`mt-4 max-w-[530px] text-base leading-[1.65] md:text-lg ${colors.description}`}
+        >
           {description}
         </p>
       )}

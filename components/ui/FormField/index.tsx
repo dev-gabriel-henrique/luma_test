@@ -19,7 +19,7 @@ type TextareaProps = IFieldControlProps &
   TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const controlClasses =
-  "w-full rounded-md border border-border bg-background px-4 py-3 text-xs text-text-primary outline-none transition-colors placeholder:text-text-secondary/70 focus:border-brand-primary focus:bg-white aria-invalid:border-coral";
+  "w-full rounded-lg border border-border bg-background px-4 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-secondary/80 focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 aria-invalid:border-coral";
 
 function getErrorId(id: string) {
   return `${id}-error`;
@@ -37,14 +37,17 @@ function getAccessibilityProps(id: string, error?: string) {
 function Field({ id, label, error, children }: IFieldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-xs font-semibold text-text-primary">
+      <label
+        htmlFor={id}
+        className="text-[15px] font-semibold text-text-primary"
+      >
         {label}
       </label>
 
       {children}
 
       {error && (
-        <p id={getErrorId(id)} className="text-[11px] text-coral">
+        <p id={getErrorId(id)} className="text-sm text-coral">
           {error}
         </p>
       )}
@@ -58,7 +61,7 @@ export function Input({ id, label, error, ...props }: InputProps) {
       <input
         {...props}
         {...getAccessibilityProps(id, error)}
-        className={controlClasses}
+        className={`${controlClasses} h-12`}
       />
     </Field>
   );
@@ -77,7 +80,7 @@ export function Textarea({
         {...props}
         {...getAccessibilityProps(id, error)}
         rows={rows}
-        className={`${controlClasses} resize-none`}
+        className={`${controlClasses} h-30 resize-none py-3`}
       />
     </Field>
   );

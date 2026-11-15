@@ -33,7 +33,7 @@ export default function Categories() {
     <section
       id="courses"
       aria-labelledby="categories-title"
-      className="bg-white py-16 md:py-24"
+      className="bg-white py-16 md:py-25"
     >
       <Container>
         <SectionHeading
@@ -43,7 +43,7 @@ export default function Categories() {
           description="Short, practical courses designed around skills you can put to work immediately."
         />
 
-        <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-11 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
           {categories.map((category, index) => (
             <li key={category.title}>
               <CategoryCard category={category} position={index + 1} />

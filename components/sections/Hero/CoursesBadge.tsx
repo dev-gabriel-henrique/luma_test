@@ -7,12 +7,10 @@ interface ICoursesBadgeProps {
 export default function CoursesBadge({ className }: ICoursesBadgeProps) {
   return (
     <FloatingBadge className={className}>
-      <span className="rounded bg-brand-primary-light px-1.5 py-1 text-[10px] font-bold text-brand-primary">
+      <span className="rounded-md bg-brand-primary-light px-2 py-1 text-[15px] font-bold text-brand-primary">
         120+
       </span>
-      <span className="text-[10px] font-semibold text-text-primary">
-        expert-led courses
-      </span>
+      <span className="text-[15px] text-text-primary">expert-led courses</span>
     </FloatingBadge>
   );
 }
