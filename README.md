@@ -95,7 +95,7 @@ This project used **Claude Code** (Anthropic) for three things:
 
 ### How I checked the AI output
 
-- I compared every AI-generated component against the ones I wrote by hand (`Header` and `Footer`), so the new code follows the same structure and conventions.
+- I compared every AI-generated component against to the other components, so every new code follows the same structure and conventions.
 - I checked each piece against the design, page by page.
 - I reviewed the code against clean code principles:
   - descriptive names;
