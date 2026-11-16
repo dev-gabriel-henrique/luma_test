@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Input, Textarea } from "@/components/ui/FormField";
@@ -19,6 +19,16 @@ export default function ContactForm() {
     sendContactMessage,
     INITIAL_CONTACT_STATE,
   );
+
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (formRef.current) {
+      formRef.current
+        .querySelector<HTMLElement>('aria-invalid="true"')
+        ?.focus();
+    }
+  }, []);
 
   return (
     <div className="rounded-xl border border-border bg-white p-6 shadow-sm md:p-8">
